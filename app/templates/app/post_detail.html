@@ -1,0 +1,58 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="post">
+
+    {% if post.published_date %}
+    <div class="date">
+        {{ post.published_date }}
+    </div>
+    {% else %}
+    <a class="btn btn-dark" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-auto mr-auto">
+            <h2>{{ post.title }}</h2>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div class="col-auto">
+            <a class="btn btn-outline-dark" href="{% url 'post_edit' pk=post.pk %}">
+                <img src="{% static 'img/edit.png' %}" title="Editar">
+            </a>
+            <a class="btn btn-outline-dark" href="{% url 'post_remove' pk=post.pk %}">
+                <img src="{% static 'img/trash.png' %}" title="Excluir">
+            </a>
+        </div>
+        {% endif %}
+
+    </div>
+    <p>{{ post.text|linebreaksbr }}</p>
+</div>
+<hr>
+<a class="btn btn-dark" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+<br>
+
+<div class="listas">
+{% for comment in post.comments.all %}
+{% if user.is_authenticated or comment.approved_comment %}
+<div class="comment">
+    <div class="date">
+        {{ comment.created_date }}
+        {% if not comment.approved_comment %}
+        <a class="btn btn-dark" href="{% url 'comment_remove' pk=comment.pk %}">Remove</span></a>
+        <a class="btn btn-dark" href="{% url 'comment_approve' pk=comment.pk %}">Approve</a>
+        {% endif %}
+    </div>
+    <strong>{{ comment.author }}</strong>
+    <p>{{ comment.text|linebreaks }}</p>
+</div>
+{% endif %}
+{% empty %}
+<p>Sem comentários ainda :(</p>
+{% endfor %}
+</div>
+{% endblock %}

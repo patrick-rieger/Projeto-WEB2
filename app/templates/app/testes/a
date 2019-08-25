@@ -1,0 +1,85 @@
+
+<!-- <img src="{% static 'img/nba-basketball.jpg' %}" class="img-fluid" alt="nba-basketball.jpg"> -->
+<!-- <img src="{% static 'img/background.png' %}" class="img-fluid" alt="nba-basketball.jpg"> -->
+<div class="media" width='50px'>
+    <img src="{% static 'img/enterrada.gif' %}" alt="gif" width="300px" title="Maneiro né?" class="mr-3">
+    <div class="media-body">
+        <h5 class="mt-0">Media heading</h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
+        vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+        lacinia congue felis in faucibus.
+    </div>
+</div>
+<!-- <img src="{% static 'img/enterrada.gif' %}" alt="gif" width="300px" title="Maneiro né?"> -->
+
+
+<div class="card text-black bg-transparent mb-3">
+    <div class="card-header">
+        <h5>Veja também:</h5>
+    </div>
+    <div class="card-body">
+        <h6 class="card-title">Mais sobre:</h6>
+        <p class="card-text">
+            <a href="https://www.nba.com/" target="_blank">NBA</a>
+            <br>
+            <a href="https://globoesporte.globo.com/basquete/" target="_blank">Globo Esporte</a>
+            <br>
+            <a href="https://pt.wikipedia.org/wiki/Basquetebol" target="_blank">Wikipédia</a> Haha
+        </p>
+        <hr>
+        <h6 class="card-title">Benefícios pra saúde:</h6>
+        <p class="card-text">
+            <a href="http://www.esporte.gov.br/diesporte/4.html" target="_blank">Prática de esportes</a>
+            <br>
+            <a href="https://www.ecofit.com.br/beneficios-do-basquete/" target="_blank">Prática de basquete</a>
+        </p>
+        <hr>
+        <h6 class="card-title">Extra:</h6>
+        <p class="card-text">
+            <p class="text-muted">
+                <!-- <a href="EXTRA/web1-bsi3-Projeto1-Mauricio-de-Freitas/Principal.html" target="_blank"> Outro trabalho da MauTrick's Corp</a>-->
+                Outro trabalho da MauTrick's Corp
+            </p>
+        </p>
+        <hr>
+        <p class="card-text">
+            "No <a href="https://www.google.com/search?q=esportes" target="_blank">esporte</a> o grande campeão é
+            aquele que
+            não desiste de praticar."<br>
+        </p>
+    </div>
+</div>
+
+</div>
+
+<h5>Veja também:</h5>
+<section class="section element-animate">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-center">
+                <span class="flaticon-cheers display-4 text-black d-block mb-4">a</span>
+                <h4 class="mb-4 text-primary">Mais sobre:</h4>
+                <a href="https://www.nba.com/" target="_blank">NBA</a>
+                <br>
+                <a href="https://globoesporte.globo.com/basquete/" target="_blank">Globo Esporte</a>
+                <br>
+                <a href="https://pt.wikipedia.org/wiki/Basquetebol" target="_blank">Wikipédia</a> Haha
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-center">
+                <span class="flaticon-fish display-4 text-black d-block mb-4"></span>
+                <h4 class="mb-4 text-primary">Benefícios pra saúde:</h4>
+                <a href="http://www.esporte.gov.br/diesporte/4.html" target="_blank">Prática de esportes</a>
+                <br>
+                <a href="https://www.ecofit.com.br/beneficios-do-basquete/" target="_blank">Prática de basquete</a>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-center">
+                <span class="flaticon-salad display-4 text-black d-block mb-4"></span>
+                <h4 class="mb-4 text-primary">Fresh Salad</h4>
+                <p class="card-text">
+                    "No <a href="https://www.google.com/search?q=esportes" target="_blank">esporte</a> 
+                    o grande campeão é aquele que não desiste de praticar."<br>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

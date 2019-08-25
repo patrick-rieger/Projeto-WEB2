@@ -1,0 +1,40 @@
+{% extends "app/base.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+    <div class="mx-auto" style="width: 19rem;">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="card text-center" >
+                <div class="card-header">
+                    <h5 class="card-title">Login</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{ form.username.label_tag }}
+                        <br>
+                        {{ form.username }}
+                    </p>
+                    <p class="card-text">{{ form.password.label_tag }}
+                        <br>
+                        {{ form.password }}
+                    </p>
+                    {% if form.errors %}
+                    <p>
+                        <div class="alert alert-warning" role="alert">
+                            Your username and password didn't match. Please try again.
+                        </div>
+                    </p>
+                    {% endif %}
+                    <br>
+                    <button type="submit" class="btn btn-outline-dark btn-block ">LOGIN</button>
+                    <input type="hidden" name="next" value="{{ next }}" />
+                </div>
+                <div class="card-footer text-muted">
+                    Se você não tem uma conta <a href="">azar, porque não fiz register ainda.</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

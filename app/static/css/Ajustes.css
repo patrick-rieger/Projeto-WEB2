@@ -1,0 +1,107 @@
+
+@font-face {
+  font-family: bolada;
+  src: url('../font/Billy\ Ohio.ttf');
+}
+
+.rodape{
+  background-color: #212529;
+  box-shadow: 0px 0px 1px black;
+  min-width: 99%;
+  min-height: 320px;
+  padding: 10px;
+  margin-top: 0px;
+  color: #7f8285;
+}
+
+.letra{
+  font:50px bolada, Arial, Tahoma, Sans-serif;
+}
+
+.rodape h5{
+  padding-top: 30px;
+  color:rgb(255, 255, 255);
+}
+
+body {
+  /* background-color:  #d46e2a; */
+  background-color:  #000000a2;
+}
+
+.page{
+  padding: 70px 50px 20px 50px;
+}
+
+.texto{
+  position: absolute;
+  top: -450px;
+  font-size: 20px; 
+  text-shadow: 10px 2px 8px black;
+  text-align: center;
+}
+
+.padrao{
+  min-height: 460px;
+  /* background-image: url('../img/nba-basketball.jpg'); */
+  background-color: lightgray;
+}
+
+.navbar-dark.scrolled{
+  background: #212529;
+}
+
+.listas{
+  overflow: auto;
+  height: 400px;
+}  
+.listas#regras{
+  overflow: auto;
+  height: 650px;
+}  
+
+table#campeonatos tbody tr td{
+  text-align: center;
+}
+table#campeonatosNBA tr th{
+  text-indent: 50px;
+}
+
+.Barra{
+  width: 22rem;
+  height: 60%;
+  
+  border-color: darkgray;
+  border-width: 9px;
+  padding-left: 20px;
+
+}
+
+.comment{
+  overflow: auto;
+}
+
+
+.page_header{
+}
+
+.page_footer{
+  
+}
+
+div#draft p, small{
+  color: lightslategray;
+} 
+
+div#draft h2{
+  color: whitesmoke;
+}
+
+#loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url('http://i.imgur.com/zAD2y29.gif') 50% 50% no-repeat white;
+}

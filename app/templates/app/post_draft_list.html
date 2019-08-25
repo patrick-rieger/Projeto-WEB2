@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<h1>ESBOÇOS:</h1>
+<div class="listas">
+    <div class="list-group" id="draft">
+        {% for post in posts %}
+        <a href="{% url 'post_detail' pk=post.pk %}" class="list-group-item list-group-item-action bg-dark">
+            <div class="d-flex w-100 justify-content-between">
+                <h2 class="mb-1">{{ post.title }}</h2>
+                <small>{{ post.created_date|date:'d-m-Y' }}</small>
+            </div>
+            <p class="mb-1">{{ post.text|truncatechars:200 }}</p>
+            <small>{{ post.autor }}</small>
+        </a>
+        <br>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

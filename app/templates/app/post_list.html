@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+<h1>LISTA DE POSTS::</h1>
+<div class="listas">
+    <div class="list-group" id="draft">
+        {% for post in posts %}
+        <a type="button" class="btn btn-dark" href="{% url 'post_detail' pk=post.pk %}">
+            Comments: <span class="badge badge-light">{{ post.approved_comments.count }}</span>
+        </a>
+        <a href="{% url 'post_detail' pk=post.pk %}" class="list-group-item list-group-item-action bg-dark">
+            <div class="d-flex w-100 justify-content-between">
+                <h2 class="mb-1">{{ post.title }}</h2>
+                <small>
+                    {% if post.published_date %}
+                    {{ post.published_date }}
+                    {% else %}
+                    Ainda não publicado.
+                    {% endif %}</small>
+            </div>
+            <p class="mb-1">{{ post.text|linebreaksbr }}</p>
+            <small>{{ post.author_id }}</small>
+        </a>
+        <br>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
