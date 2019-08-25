@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post, Comment, Noticias
+from .models import Post, Comment, Noticia
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 import requests
@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 # Create your views here.
 
 def principal(request):
-    noticias = Noticias.objects.all()
+    noticias = Noticia.objects.filter()
     return render(request, 'app/oi.html', { 'noticias' : noticias })
 
 def login(request):
@@ -112,7 +112,7 @@ def regras(request):
     return render(request, 'app/regras.html')
 
 def montandoNoticias(self):
-    Noticias.objects.all().delete()
+    Noticia.objects.all().delete()
     page = requests.get("https://globoesporte.globo.com/basquete/")
     soup = BeautifulSoup(page.content, 'html.parser')
     links = soup.find_all('div', class_='feed-post-body-title gui-color-primary gui-color-hover')
@@ -133,6 +133,6 @@ def montandoNoticias(self):
                 TAGimage = str(TAGimage)
                 image = TAGimage.split('data-max-size-url="', 1)[1]
                 image = image.split('" data-min-size=', 1)[0]
-                Noticias.objects.create(link=link, titulo=titulo, resumo=resumo, imagem=image)
+                Noticia.objects.create(link=link, titulo=titulo, resumo=resumo, imagem=image)
     return redirect('principal')
 

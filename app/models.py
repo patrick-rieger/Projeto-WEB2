@@ -35,7 +35,7 @@ class Comment(models.Model):
     def __str__(self):
         return self.text
 
-class Noticias(models.Model):
+class Noticia(models.Model):
     link = models.TextField()
     titulo = models.TextField(max_length=200)
     resumo = models.TextField()
